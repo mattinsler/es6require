@@ -1,7 +1,7 @@
 # @mattinsler/es6require
 
 In cases where you need to use `require` and you don't know if the module is
-using `export default` or `module.exports`;
+using `export default` or `module.exports`.
 
 ## Installation
 

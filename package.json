@@ -1,7 +1,7 @@
 {
   "name": "@mattinsler/es6require",
   "version": "0.0.1",
-  "description": "",
+  "description": "Require 'export default' or 'module.exports'",
   "homepage": "https://github.com/mattinsler/es6require",
   "bugs": {
     "url": "https://github.com/mattinsler/es6require/issues"
