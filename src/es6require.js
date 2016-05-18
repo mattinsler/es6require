@@ -6,8 +6,8 @@ function es6require(...filenames) {
     : filenames.pop();
 
   const opts = {
-    ...passedOpts,
-    ignoreModuleNotFound: false
+    ignoreModuleNotFound: false,
+    ...passedOpts
   };
 
   let filename;
