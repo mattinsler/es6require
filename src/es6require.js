@@ -1,3 +1,5 @@
+import path from 'path';
+
 function es6require(...filenames) {
   const passedOpts = typeof(filenames.slice(-1)[0]) === 'string'
     ? {}
@@ -11,7 +13,7 @@ function es6require(...filenames) {
   let filename;
 
   try {
-    filename = require.resolve(...filenames);
+    filename = require.resolve(path.resolve(...filenames));
   } catch (err) {
     if (opts.ignoreModuleNotFound === true && err.code === 'MODULE_NOT_FOUND') {
       return;
