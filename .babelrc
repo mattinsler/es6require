@@ -5,6 +5,5 @@
   ],
   "plugins": [
     "add-module-exports"
-  ],
-  "sourceMaps": "inline"
+  ]
 }
