@@ -1,19 +1,18 @@
-import path from 'path';
+const path = require('path')
 
-function es6require(...filenames) {
+module.exports = function es6require(...filenames) {
   const passedOpts = typeof(filenames.slice(-1)[0]) === 'string'
     ? {}
     : filenames.pop();
 
-  const opts = {
+  const opts = Object.assign({
     ignoreModuleNotFound: false,
-    ...passedOpts
-  };
+  }, passedOpts);
 
   let filename;
 
   try {
-    filename = require.resolve(path.resolve(...filenames));
+    filename = require.resolve(path.resolve.apply(path, filenames));
   } catch (err) {
     if (opts.ignoreModuleNotFound === true && err.code === 'MODULE_NOT_FOUND') {
       return;
@@ -33,4 +32,3 @@ function es6require(...filenames) {
   return requiredModule;
 }
 
-export default es6require;
